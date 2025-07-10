@@ -1,0 +1,57 @@
+{%  extends 'layout.html' %}
+
+{% block content %}
+
+{% load static  %}
+
+<header class="row bg-black ">
+    <div class="col-md-5">
+<img src="{% static 'portfolio/yo.jpg' %}" alt="" class="foto-perfil">
+    </div>
+
+    <div class="col-md-7 my-auto">
+        <h1>I am <strong>Alvaro Moya</h1>
+            <h3>I am Python FullStack Developer</h3>
+            <p>Soy técnico en programación con una fuerte pasión por resolver problemas y crear soluciones innovadoras. Me especializo en adaptarme rápidamente a nuevas tecnologías y entornos, lo que me permite aportar valor desde el primer momento</p>
+            <a href="{%static 'portfolio/CV.pdf'%}" class="btn btn-primary btn-lg rounded-0 my-3" target="_blank" >Download CV</a>
+    </div>
+</header>
+
+<div class="row my-4 text-center">
+    <h3>My Proyects</h3>
+    <p>Estos proyectos representan parte de mi camino de aprendizaje y crecimiento como desarrollador. En ellos aplico tecnologías como Python, Django, JavaScript y HTML/CSS.</p>
+
+{% for project in projects %}
+
+<div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+        <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+        <div class="car-body">
+        <h2>{{project.title}}</h2>
+        <p>{{project.description}}</p>
+
+        {% if project.url %}
+        <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" 
+        target="_blank"
+        >{{project.url}}</a>
+
+        {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endfor %} 
+
+<div class="col-md-7 my-auto">
+    <div class="titulo">
+        <h1>HABILIDADES</h1>
+    
+
+    </div>
+</div>
+
+{% endblock %}
+
+</div>

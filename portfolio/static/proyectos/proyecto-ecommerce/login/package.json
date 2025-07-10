@@ -1,0 +1,23 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "main": "db.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon db.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon src/db.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "express": "^4.21.1",
+        "mercadopago": "^2.0.15",
+        "nodemon": "^3.1.7",
+        "pg": "^8.13.1"
+    }
+}

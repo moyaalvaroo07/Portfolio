@@ -1,0 +1,25 @@
+body {
+    background: #090909;
+}
+.bg-black {
+    background: #000;
+
+}
+.card-project:hover {
+    border: 1px solid #fff;
+    cursor: pointer;
+
+}
+.foto-perfil {
+    width: 308px; /* aumentás el tamaño */
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-left: 76px;   /* empuja hacia la derecha */
+    margin-right: 0; 
+    
+     align-items: ;   /* asegura que quede pegada al texto si hay espacio */
+}
+.titulo {
+margin-top: auto;
+
+}
