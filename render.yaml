@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: mi-app-django
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn mi_proyecto.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mi_proyecto.settings

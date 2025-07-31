@@ -23,34 +23,84 @@
 
 {% for project in projects %}
 
-<div class="col-md-4 p-4">
-    <div class="card bg-black card-project">
-        <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
-        <div class="car-body">
-        <h2>{{project.title}}</h2>
-        <p>{{project.description}}</p>
-
-        {% if project.url %}
-        <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" 
-        target="_blank"
-        >{{project.url}}</a>
-
-        {% endif %}
-        </div>
+<div class="col-md-4 p-3 d-flex">
+  <div class="card bg-black text-white d-flex flex-column w-100 h-100">
+    <a href="{{ project.url }}" target="_blank">
+      <img src="{{ project.image.url }}" alt="{{ project.title }}" class="card-img-top" style="height: 180px; object-fit: cover;">
+    </a>
+    <div class="card-body text-center p-3">
+      <h5 class="mb-1">{{ project.title }}</h5>
+      <p class="mb-2" style="font-size: 0.9rem;">{{ project.description }}</p>
+      {% if project.url %}
+        <a href="{{ project.url }}" target="_blank" style="
+          display: inline-block;
+          background: linear-gradient(135deg, #0ff1ff, #007bff);
+          padding: 8px 16px;
+          border-radius: 30px;
+          font-size: 0.85rem;
+          color: white;
+          font-weight: bold;
+          box-shadow: 0 0 10px rgba(0,123,255,0.5);
+          animation: flotar 3s ease-in-out infinite;
+          transition: transform 0.3s;
+          text-decoration: none;
+        ">Ver Proyecto</a>
+      {% endif %}
     </div>
+  </div>
 </div>
+
+
+
 
 
 
 {% endfor %} 
 
-<div class="col-md-7 my-auto">
-    <div class="titulo">
-        <h1>HABILIDADES</h1>
-    
+<section class="text-center my-5">
+    <h2 style="font-size: 2rem; font-weight: bold; color: white; margin-bottom: 30px;">HABILIDADES</h2>
 
+    <div style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    ">
+        <div style="
+            background: linear-gradient(135deg, #0ff1ff, #007bff);
+            padding: 12px 20px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+            animation: flotar 3s ease-in-out infinite;
+            transition: transform 0.3s;
+        ">Python</div>
+
+        <div style="background: linear-gradient(135deg, #0ff1ff, #007bff); padding: 12px 20px; border-radius: 50px; color: white; font-weight: bold; box-shadow: 0 0 15px rgba(0,123,255,0.5); animation: flotar 3.2s ease-in-out infinite; transition: transform 0.3s;">Django</div>
+
+        <div style="background: linear-gradient(135deg, #0ff1ff, #007bff); padding: 12px 20px; border-radius: 50px; color: white; font-weight: bold; box-shadow: 0 0 15px rgba(0,123,255,0.5); animation: flotar 2.8s ease-in-out infinite; transition: transform 0.3s;">HTML & CSS</div>
+
+        <div style="background: linear-gradient(135deg, #0ff1ff, #007bff); padding: 12px 20px; border-radius: 50px; color: white; font-weight: bold; box-shadow: 0 0 15px rgba(0,123,255,0.5); animation: flotar 3.1s ease-in-out infinite; transition: transform 0.3s;">JavaScript</div>
+
+        <div style="background: linear-gradient(135deg, #0ff1ff, #007bff); padding: 12px 20px; border-radius: 50px; color: white; font-weight: bold; box-shadow: 0 0 15px rgba(0,123,255,0.5); animation: flotar 3.3s ease-in-out infinite; transition: transform 0.3s;">Bootstrap</div>
+
+        <div style="background: linear-gradient(135deg, #0ff1ff, #007bff); padding: 12px 20px; border-radius: 50px; color: white; font-weight: bold; box-shadow: 0 0 15px rgba(0,123,255,0.5); animation: flotar 2.7s ease-in-out infinite; transition: transform 0.3s;">Git & GitHub</div>
+
+        <div style="background: linear-gradient(135deg, #0ff1ff, #007bff); padding: 12px 20px; border-radius: 50px; color: white; font-weight: bold; box-shadow: 0 0 15px rgba(0,123,255,0.5); animation: flotar 3s ease-in-out infinite; transition: transform 0.3s;">MySQL / SQLite</div>
+
+        <div style="background: linear-gradient(135deg, #0ff1ff, #007bff); padding: 12px 20px; border-radius: 50px; color: white; font-weight: bold; box-shadow: 0 0 15px rgba(0,123,255,0.5); animation: flotar 3.2s ease-in-out infinite; transition: transform 0.3s;">Consumo de APIs</div>
     </div>
-</div>
+
+    <style>
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+</section>
+
+
 
 {% endblock %}
 
