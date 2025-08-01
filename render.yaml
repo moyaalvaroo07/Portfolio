@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: mi-app-django
+    name: django-portfolio
     env: python
     buildCommand: ""
-    startCommand: gunicorn mi_proyecto.wsgi:application
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: mi_proyecto.settings
+    startCommand: |
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
+      gunicorn django_porfolio.wsgi:application
