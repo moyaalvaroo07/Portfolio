@@ -2,8 +2,11 @@ services:
   - type: web
     name: django-portfolio
     env: python
-    buildCommand: ""
-    startCommand: |
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: >
       python manage.py migrate &&
       python manage.py collectstatic --noinput &&
       gunicorn django_porfolio.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: django_porfolio.settings
